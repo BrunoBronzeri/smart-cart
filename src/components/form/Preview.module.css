@@ -1,0 +1,15 @@
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9ec9676;
+}
+
+.line h4 {
+    margin-left: .5em;
+}
+
+.line p {
+    padding: .25em;
+    margin-right: .5em;
+}

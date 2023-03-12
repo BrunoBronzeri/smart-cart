@@ -1,0 +1,56 @@
+.back {
+    display: flex;
+    justify-content: center;
+    max-height: fit-content;
+}
+
+.insert_container {
+    background-color: whitesmoke;
+    margin: 1.5em;
+    border-radius: 2px;
+    border-top: 10px solid #fb3;
+    min-height: 400px;
+    min-width: 320px;
+}
+
+.insert_container h1 {
+    margin-top: .5em;
+    text-align: center;
+}
+
+.each {
+    background-color: #f9ec9676;
+    margin: .6em;
+}
+
+.total {
+    margin: .6em;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.container_cash {
+    background-color: whitesmoke;
+    margin: 1.5em;
+    border-radius: 2px;
+    border-top: 10px solid #fb3;
+    height: 300px;
+    min-width: 280px;
+}
+
+.container_cash h1 {
+    margin-top: .5em;
+    text-align: center;
+}
+
+.container_cash h2 {
+    font-size: 1.2em;
+    margin: .5em;
+    text-align: center;
+}
+
+.container_cash p {
+    margin: 1em;
+    text-align: center;
+}
