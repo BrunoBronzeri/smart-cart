@@ -9,9 +9,19 @@
     border-radius: 2px;
     font-size: .65em;
     /* margin-left: 2.2em; */
-    margin: 2em 2.2em 2em 2em;
+    margin: 2em 3.1em 2em 2em;
 }
 
 .btn:hover {
+    color: #fb3;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.link:hover {
     color: #fb3;
 }

@@ -23,7 +23,7 @@ export default function Cart () {
             .then((data) => {
                 setCount(data.id)
                 // console.log(data.id)
-                window.location.reload()
+                window.location.reload() 
             })
             .catch(err => console.log(err))
             console.log(count)
