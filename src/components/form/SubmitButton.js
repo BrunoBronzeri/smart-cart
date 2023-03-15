@@ -7,10 +7,10 @@ export default function SubmitButton({ text }) {
     return(
         <div>
             <button className={styles.btn}>{text}</button>
-            <button1 className={styles.btn}>
-                <Link className={styles.link
-                } to='/products'>Finalizar</Link>
-            </button1>
+            <button className={styles.btn}>
+                <Link className={styles.link}
+                to='/products'>Finalizar</Link>
+            </button>
         </div>
     );
 }

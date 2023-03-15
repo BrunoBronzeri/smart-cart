@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import ProductLine from '../Product/ProductLine';
+import ClearProducts from '../product/ClearProducts';
+import ProductLine from '../product/ProductLine';
 
 import styles from './Products.module.css';
 
@@ -61,6 +62,9 @@ export default function Products () {
                 <p>{Math.floor(((((Sum()%100)%50)%20)%10)/5)}x R$5,00</p>
                 <p>{Math.floor((((((Sum()%100)%50)%20)%10)%5)/2)}x R$2,00</p>
                 <p>{Math.floor(((((((Sum()%100)%50)%20)%10)%5)%2)/1)}x R$1,00</p>
+                <div className={styles.clc_btn}>
+                <ClearProducts />
+                </div>
             </div>
         </div>
     );
