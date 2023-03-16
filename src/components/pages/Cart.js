@@ -7,10 +7,11 @@ import styles from './Cart.module.css'
 
 export default function Cart () {
 
-    var [count, setCount] = useState(0)
+    // var [count, setCount] = useState([])
+    // var count = 0
 
     function addProd(product) {
-        
+       
         fetch("http://localhost:5000/products/?_page=1", { //por padrão são dez o limite
         method: "POST",
         headers: {
@@ -20,21 +21,16 @@ export default function Cart () {
         })
         .then((resp) => resp.json())
         .then((data) => {
-            setCount(data.id)
-            count = data.id
-            window.location.reload()
-            console.log(data.id)            
+            console.log(data) 
+            // window.location.reload()        
         })
         .catch(err => console.log(err))
-        console.log(count)
-        
-        // count++;
     }
 
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/products", {
+        fetch("http://localhost:5000/products/", {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
@@ -43,7 +39,6 @@ export default function Cart () {
         .then((resp) => resp.json())
         .then((data) => {
             setProducts(data)
-            // console.log(data)
         })
         .catch((err) => console.log(err))
     }, [])
@@ -53,7 +48,8 @@ export default function Cart () {
             <div className={styles.insert_container}>
                 <h1>Carrinho de Compras</h1>
                 <p>Insira abaixo o nome do produto e o preço respectivo</p>
-                <ProductForm handleSubmit={count<=2 ? addProd : ''} btnText={'Adicionar Produto'} />
+                <ProductForm handleSubmit={addProd} btnText={'Adicionar Produto'} /> 
+                {/* {count<=0 ? addProd : ''} */}
             </div>
             <div className={styles.preview}>
                 <h1>Produtos</h1>

@@ -10,7 +10,7 @@ export default function Products () {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/products", {
+        fetch("http://localhost:5000/products/?_sort=name&_order=asc", {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
