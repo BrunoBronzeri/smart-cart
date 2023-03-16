@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import ClearProducts from '../product/ClearProducts';
 import ProductLine from '../product/ProductLine';
 
 import styles from './Products.module.css';
@@ -30,6 +29,20 @@ export default function Products () {
         }
         return total
     }
+
+    function removeProduct(id) {  //fnc para apagar os cards tanto do front como do back. Feitos no componente pai:Projects(filho:ProjectCard)
+        fetch(`http://localhost:5000/products/${id}`, { //faz um request pra uma URL
+            method: 'DELETE', //identificada pelo método (DELETE)  //NOTE: GET->entrega algo UPDATE->atualizar DELETE->deletar
+            headers: {
+                'Content-Type': 'application/json'  // ao efetuar ação é possível vê-la no terminal 
+            },
+        })
+        .then(resp => resp.json())
+        .then(() => {
+            setProducts(products.filter((product) => product.id !== id))
+        })
+        .catch(err => console.log(err))
+    }
     
     return(
         <div className={styles.back}>
@@ -43,6 +56,7 @@ export default function Products () {
                                 name={product.name}
                                 price={product.price}
                                 key={product.id}
+                                handleRemove={removeProduct}
                             />
                         )) 
                     }
@@ -63,7 +77,6 @@ export default function Products () {
                 <p>{Math.floor((((((Sum()%100)%50)%20)%10)%5)/2)}x R$2,00</p>
                 <p>{Math.floor(((((((Sum()%100)%50)%20)%10)%5)%2)/1)}x R$1,00</p>
                 <div className={styles.clc_btn}>
-                <ClearProducts />
                 </div>
             </div>
         </div>

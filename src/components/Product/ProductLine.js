@@ -1,6 +1,13 @@
 import styles from './ProductLine.module.css'
 
-export default function ProductLine({ id, name, price }){
+import { BsFillTrashFill } from 'react-icons/bs'
+
+export default function ProductLine({ id, name, price, handleRemove }){
+
+    const remove = (e) => {
+        e.preventDefault()
+        handleRemove(id)
+    }
 
     return(
         <div className={styles.line}>
@@ -8,6 +15,9 @@ export default function ProductLine({ id, name, price }){
             <p>
                 <span></span> R${price}
             </p>
+            <button className={styles.action} onClick={remove}>
+                <BsFillTrashFill />
+            </button>
         </div>
     );
 }

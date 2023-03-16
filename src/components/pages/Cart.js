@@ -8,7 +8,6 @@ import styles from './Cart.module.css'
 export default function Cart () {
 
     // var [count, setCount] = useState([])
-    // var count = 0
 
     function addProd(product) {
        
@@ -21,10 +20,12 @@ export default function Cart () {
         })
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data) 
-            // window.location.reload()        
+            console.log(data.id)  
+            window.location.reload()
         })
         .catch(err => console.log(err))
+
+        // return(window.location.reload())
     }
 
     const [products, setProducts] = useState([])
@@ -63,7 +64,7 @@ export default function Cart () {
                                 key={product.id}
                             />
                         ))
-                    } 
+                    }
                 </div>
             </div>
         </div>
